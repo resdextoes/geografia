@@ -1,0 +1,241 @@
+
+<style>
+  .root { font-family: var(--font-sans); max-width: 700px; margin: 0 auto; padding: 1rem 0 2rem; }
+  .title-bar { border-left: 4px solid #1D9E75; padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 1.5rem; }
+  .title-bar h1 { font-size: 20px; font-weight: 500; margin: 0; color: var(--color-text-primary); }
+  .title-bar p { font-size: 13px; color: var(--color-text-secondary); margin: 4px 0 0; }
+  .section { margin-bottom: 1.25rem; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
+  .section-header { display: flex; align-items: center; gap: 10px; padding: 0.65rem 1rem; cursor: pointer; user-select: none; }
+  .section-header:hover { background: var(--color-background-secondary); }
+  .sec-icon { font-size: 18px; }
+  .sec-title { font-size: 15px; font-weight: 500; flex: 1; color: var(--color-text-primary); }
+  .sec-badge { font-size: 11px; padding: 2px 8px; border-radius: 99px; }
+  .chevron { font-size: 16px; color: var(--color-text-secondary); transition: transform 0.2s; }
+  .chevron.open { transform: rotate(180deg); }
+  .section-body { padding: 0.75rem 1rem 1rem; border-top: 0.5px solid var(--color-border-tertiary); background: var(--color-background-primary); }
+  .zone-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-top: 0.5rem; }
+  .zone-card { border-radius: var(--border-radius-md); padding: 0.6rem 0.75rem; }
+  .zone-name { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+  .zone-detail { font-size: 12px; line-height: 1.5; }
+  .fact-list { list-style: none; padding: 0; margin: 0.25rem 0 0; }
+  .fact-list li { font-size: 13px; line-height: 1.6; padding: 3px 0; display: flex; gap: 8px; }
+  .fact-list li::before { content: "—"; color: var(--color-text-secondary); flex-shrink: 0; }
+  .kw-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.5rem; }
+  .kw { font-size: 12px; padding: 4px 10px; border-radius: 99px; border: 0.5px solid var(--color-border-secondary); color: var(--color-text-secondary); }
+  .exam-box { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-top: 0.5rem; }
+  .exam-q { font-size: 13px; line-height: 1.6; color: var(--color-text-primary); margin: 0 0 4px; }
+  .exam-q b { font-weight: 500; }
+  .divider { height: 0.5px; background: var(--color-border-tertiary); margin: 0.6rem 0; }
+  .label-sm { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-secondary); margin-bottom: 6px; }
+</style>
+
+<div class="root">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Notatka do sprawdzianu: Zróżnicowanie środowiska przyrodniczego w Polsce</h2>
+
+  <div class="title-bar">
+    <h1>Zróżnicowanie środowiska przyrodniczego w Polsce</h1>
+    <p>Notatka do sprawdzianu · Geografia rozszerzona · klasa 3 technikum</p>
+  </div>
+
+  <!-- PASY RZEŹBY TERENU -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <i class="ti ti-mountain sec-icon" aria-hidden="true" style="color:#1D9E75"></i>
+      <span class="sec-title">1. Pasy rzeźby terenu</span>
+      <span class="sec-badge" style="background:#E1F5EE;color:#0F6E56">kluczowe</span>
+      <i class="ti ti-chevron-down chevron open"></i>
+    </div>
+    <div class="section-body">
+      <p style="font-size:13px;color:var(--color-text-secondary);margin:0 0 0.5rem">Polska leży w strefie przejściowej między starymi masywami Europy Zachodniej a młodymi Alpami. Wyróżniamy <b style="font-weight:500">6 równoleżnikowych pasów</b>:</p>
+      <div class="zone-grid">
+        <div class="zone-card" style="background:#E1F5EE;border:0.5px solid #9FE1CB">
+          <div class="zone-name" style="color:#085041">Pobrzeża</div>
+          <div class="zone-detail" style="color:#0F6E56">Pas nadmorski — mierzeje, klify, wydmy, jeziora przybrzeżne (Łeba, Gardno)</div>
+        </div>
+        <div class="zone-card" style="background:#E6F1FB;border:0.5px solid #B5D4F4">
+          <div class="zone-name" style="color:#0C447C">Pojezierza</div>
+          <div class="zone-detail" style="color:#185FA5">Ukształtowane przez lodowiec — moreny, oz y, drumliny, jeziora rynnowe i morenowe</div>
+        </div>
+        <div class="zone-card" style="background:#F1EFE8;border:0.5px solid #D3D1C7">
+          <div class="zone-name" style="color:#2C2C2A">Niziny Środkowe</div>
+          <div class="zone-detail" style="color:#444441">Sandr y, pradoliny, równiny akumulacyjne. Nizina Mazowiecka, Wielkopolska</div>
+        </div>
+        <div class="zone-card" style="background:#FAEEDA;border:0.5px solid #FAC775">
+          <div class="zone-name" style="color:#412402">Wyżyny</div>
+          <div class="zone-detail" style="color:#633806">Wyż. Krakowsko-Częstochowska (skały wapienne, ostańce), Roztocze, Wyż. Lubelska (less)</div>
+        </div>
+        <div class="zone-card" style="background:#FAECE7;border:0.5px solid #F5C4B3">
+          <div class="zone-name" style="color:#4A1B0C">Kotliny Podkarpackie</div>
+          <div class="zone-detail" style="color:#993C1D">Kotliny: Sandomierska, Oświęcimska — obszary depresyjne przed Karpatami</div>
+        </div>
+        <div class="zone-card" style="background:#FCEBEB;border:0.5px solid #F7C1C1">
+          <div class="zone-name" style="color:#501313">Góry</div>
+          <div class="zone-detail" style="color:#A32D2D">Sudety (stare, zrębowe) i Karpaty (młode, fałdowe). Rysy 2499 m n.p.m.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KLIMAT -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <i class="ti ti-cloud sec-icon" aria-hidden="true" style="color:#185FA5"></i>
+      <span class="sec-title">2. Klimat</span>
+      <span class="sec-badge" style="background:#E6F1FB;color:#185FA5">przejściowy</span>
+      <i class="ti ti-chevron-down chevron open"></i>
+    </div>
+    <div class="section-body">
+      <p class="label-sm">Charakter klimatu</p>
+      <ul class="fact-list">
+        <li>Klimat <b style="font-weight:500">umiarkowany ciepły przejściowy</b> — wpływy oceaniczne (zachód) i kontynentalne (wschód)</li>
+        <li>Przewaga mas powietrza polarno-morskiego (zach.) i polarno-kontynentalnego (wsch.)</li>
+        <li>Średnia roczna temperatura: ok. 8–9°C w centrum; opady 500–700 mm/rok (max. w górach &gt;1500 mm)</li>
+        <li>Najcieplejszy miesiąc: lipiec (~18°C); najchłodniejszy: styczeń (ok. –2°C)</li>
+      </ul>
+      <div class="divider"></div>
+      <p class="label-sm">Regionalne różnice klimatyczne</p>
+      <ul class="fact-list">
+        <li><b style="font-weight:500">Zachodnia Polska</b> — cieplejsza zima, łagodniejsze lato, wyższe opady, dłuższy okres wegetacji</li>
+        <li><b style="font-weight:500">Wschodnia Polska</b> — surowsza zima (mrozy), cieplejsze lato, niższe opady</li>
+        <li><b style="font-weight:500">Wybrzeże</b> — łagodna zima, chłodne lato, silne wiatry</li>
+        <li><b style="font-weight:500">Góry</b> — piętrowość klimatyczna, halny, inwersje temperatury</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WODY -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <i class="ti ti-droplet sec-icon" aria-hidden="true" style="color:#378ADD"></i>
+      <span class="sec-title">3. Wody powierzchniowe i podziemne</span>
+      <span class="sec-badge" style="background:#E6F1FB;color:#185FA5">dorzecza</span>
+      <i class="ti ti-chevron-down chevron open"></i>
+    </div>
+    <div class="section-body">
+      <ul class="fact-list">
+        <li>Główne dorzecza: <b style="font-weight:500">Wisła</b> (54% pow. Polski) i <b style="font-weight:500">Odra</b> (34%) — oba uchodzą do Bałtyku</li>
+        <li>Główny dział wodny przebiega przez wyżyny i góry (Roztocze, Karpaty)</li>
+        <li>Polska jest krajem <b style="font-weight:500">ubogim w wodę</b> — zasoby wodne 1600 m³/os/rok (poniżej średniej europejskiej)</li>
+        <li>Jeziora: najliczniejsze na pojezierzach (Mazurskie, Pomorskie, Wielkopolskie), brak naturalnych jezior w centrum</li>
+        <li>Największe jezioro: <b style="font-weight:500">Śniardwy</b> (113 km²); najgłębsze: <b style="font-weight:500">Hańcza</b> (108 m)</li>
+        <li>Wody podziemne — Główne Zbiorniki Wód Podziemnych (GZWP), kras na wyżynach wapiennych</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- GLEBY I ROŚLINNOŚĆ -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <i class="ti ti-plant sec-icon" aria-hidden="true" style="color:#3B6D11"></i>
+      <span class="sec-title">4. Gleby i roślinność</span>
+      <span class="sec-badge" style="background:#EAF3DE;color:#3B6D11">strefowość</span>
+      <i class="ti ti-chevron-down chevron open"></i>
+    </div>
+    <div class="section-body">
+      <p class="label-sm">Główne typy gleb</p>
+      <ul class="fact-list">
+        <li><b style="font-weight:500">Bielicowe i brunatne</b> — dominują; bielicowe pod lasami iglastymi, brunatne pod liściastymi</li>
+        <li><b style="font-weight:500">Czarnoziemy</b> — Wyż. Lubelska, Kotlina Sandomierska; najżyźniejsze gleby Polski</li>
+        <li><b style="font-weight:500">Mady</b> — doliny rzeczne; żyzne gleby aluwialne (rolniczo cenne)</li>
+        <li><b style="font-weight:500">Torfowe i murszowe</b> — bagna i doliny rzek, Pojezierze Mazurskie</li>
+        <li><b style="font-weight:500">Rędziny</b> — podłoże wapienne, Wyż. Krakowsko-Częstochowska</li>
+      </ul>
+      <div class="divider"></div>
+      <p class="label-sm">Roślinność</p>
+      <ul class="fact-list">
+        <li>Polska leży w strefie lasów liściastych i mieszanych strefy umiarkowanej</li>
+        <li>Lasy pokrywają ~31% powierzchni kraju (dominuje sosna)</li>
+        <li>Naturalna roślinność: grądy, buczyny, łęgi; przekształcona przez człowieka w monokultury sosnowe</li>
+        <li>W górach — <b style="font-weight:500">piętra roślinne</b>: pogórze → regiel dolny (buk) → regiel górny (świerk) → kosodrzewina → hale → turnie</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- KRAINY GEOGRAFICZNE -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <i class="ti ti-map-pin sec-icon" aria-hidden="true" style="color:#7F77DD"></i>
+      <span class="sec-title">5. Ważne krainy i obszary chronione</span>
+      <span class="sec-badge" style="background:#EEEDFE;color:#3C3489">egzamin</span>
+      <i class="ti ti-chevron-down chevron open"></i>
+    </div>
+    <div class="section-body">
+      <ul class="fact-list">
+        <li>23 parki narodowe w Polsce — łącznie ok. 1% pow. kraju</li>
+        <li><b style="font-weight:500">Białowieski PN</b> — ostatni nizinny las pierwotny w Europie, UNESCO, żubr</li>
+        <li><b style="font-weight:500">Tatrzański PN</b> — najwyższe góry, przyroda wysokogórska, kozica, świstak</li>
+        <li><b style="font-weight:500">Słowiński PN</b> — ruchome wydmy, jeziora przybrzeżne, UNESCO</li>
+        <li><b style="font-weight:500">Bieszczadzki PN</b> — połoniny, wilk, ryś, niedźwiedź brunatny</li>
+        <li>Sieć Natura 2000 obejmuje ok. 20% pow. kraju</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PYTANIA SPRAWDZIANOWE -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <i class="ti ti-clipboard-list sec-icon" aria-hidden="true" style="color:#BA7517"></i>
+      <span class="sec-title">6. Typowe pytania sprawdzianowe</span>
+      <span class="sec-badge" style="background:#FAEEDA;color:#633806">sprawdzian</span>
+      <i class="ti ti-chevron-down chevron open"></i>
+    </div>
+    <div class="section-body">
+      <div class="exam-box">
+        <div class="exam-q"><b>P:</b> Wymień i scharakteryzuj 6 pasów rzeźby terenu w Polsce.</div>
+        <div class="divider"></div>
+        <div class="exam-q"><b>P:</b> Dlaczego klimat Polski ma charakter przejściowy? Podaj skutki tego zjawiska.</div>
+        <div class="divider"></div>
+        <div class="exam-q"><b>P:</b> Wyjaśnij pojęcie piętrowości roślinnej w Tatrach. Opisz kolejne piętra.</div>
+        <div class="divider"></div>
+        <div class="exam-q"><b>P:</b> Porównaj rzeźbę Sudetów i Karpat. Skąd wynikają różnice?</div>
+        <div class="divider"></div>
+        <div class="exam-q"><b>P:</b> Które gleby Polski są najżyźniejsze i gdzie występują?</div>
+        <div class="divider"></div>
+        <div class="exam-q"><b>P:</b> Omów rozmieszczenie jezior w Polsce i wyjaśnij ich genezę.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SŁOWNICZEK -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <i class="ti ti-book sec-icon" aria-hidden="true" style="color:#5F5E5A"></i>
+      <span class="sec-title">7. Pojęcia kluczowe</span>
+      <i class="ti ti-chevron-down chevron open"></i>
+    </div>
+    <div class="section-body">
+      <div class="kw-grid">
+        <span class="kw">morena czołowa</span>
+        <span class="kw">oz</span>
+        <span class="kw">drumlin</span>
+        <span class="kw">sandr</span>
+        <span class="kw">pradolina</span>
+        <span class="kw">ostaniec</span>
+        <span class="kw">mierzeja</span>
+        <span class="kw">klif</span>
+        <span class="kw">halny</span>
+        <span class="kw">inwersja temperatury</span>
+        <span class="kw">piętrowość roślinna</span>
+        <span class="kw">czarnoziem</span>
+        <span class="kw">mada</span>
+        <span class="kw">rędzina</span>
+        <span class="kw">kras</span>
+        <span class="kw">połonina</span>
+        <span class="kw">GZWP</span>
+        <span class="kw">dział wodny</span>
+        <span class="kw">Natura 2000</span>
+        <span class="kw">grąd</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggle(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.chevron');
+  const isOpen = body.style.display !== 'none';
+  body.style.display = isOpen ? 'none' : 'block';
+  chevron.classList.toggle('open', !isOpen);
+}
+</script>
